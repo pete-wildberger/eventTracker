@@ -2,8 +2,8 @@ const express = require('express'),
   app = express(),
   path = require('path'),
   bodyParser = require('body-parser'),
-  eventTracker = require('./eventTracker'),
-  output = require('./output.json');
+  eventTracker = require('./eventTracker');
+// output = require('./output.json');
 
 app.use(express.static('client/build'));
 app.use(bodyParser.urlencoded({ extended: true }));

@@ -1,12 +1,21 @@
 /*Import styles*/
 @import 'grid';
-html{
+@font-face {
+  font-family: 'Permanent Marker';
+  src: local('Permanent Marker'), url(../assets/fonts/PermanentMarker-Regular.ttf) format('ttf');
+}
+html {
   font-family: 'Permanent Marker', cursive;
+}
+.center {
+  position: relative;
+  top: 50%;
+  transform: translateX(50%);
 }
 .head {
   background: url('../assets/Background_Header.jpg') no-repeat;
   background-size: contain;
-  height: 318px;
+  height: 320px;
   width: 100%;
 }
 .foot {
