@@ -1,7 +1,11 @@
 import React from 'react';
 
 const Header = props => {
-  return <div className="row border" />;
+  return (
+    <div className="head">
+      <p>head</p>
+    </div>
+  );
 };
 
 export default Header;

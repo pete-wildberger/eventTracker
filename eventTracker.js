@@ -1,6 +1,6 @@
-fs = require('fs'),
-request = require('request'),
-cheerio = require('cheerio'),
+const fs = require('fs'),
+  request = require('request'),
+  cheerio = require('cheerio');
 
 const eventTracker = (req, res) => {
   let url = 'https://www.thecedar.org/listing/';
@@ -40,4 +40,4 @@ const eventTracker = (req, res) => {
     });
   });
 };
-module.exports = eventTracker
+module.exports = eventTracker;

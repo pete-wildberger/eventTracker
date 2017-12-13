@@ -1,2 +1,16 @@
 /*Import styles*/
 @import 'grid';
+
+.head {
+  overflow: hidden;
+  background: url('../assets/Background_Header.svg') no-repeat center bottom;
+  background-size: contain;
+}
+.foot {
+  background-image: url(../assets/Background_Footer.svg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.body {
+  background-image: url(../assets/Background_Body.svg) no-repeat;
+}

@@ -14,7 +14,7 @@ class Display extends Component {
     return (
       <div className="app">
         <Header />
-        <div>info will go here</div>
+        <div className="body">info will go here</div>
         <Footer />
       </div>
     );

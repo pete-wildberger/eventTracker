@@ -1,7 +1,13 @@
 const express = require('express'),
   app = express(),
+  path = require('path'),
+  bodyParser = require('body-parser'),
   eventTracker = require('./eventTracker'),
   output = require('./output.json');
+
+app.use(express.static('client/build'));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.get('/events', (req, res) => {
   eventTracker();
