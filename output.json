@@ -1,0 +1,532 @@
+[
+    {
+        "title": "DOSH & FRIENDS 10th Annual Cedar Show",
+        "date": "Dec 15 Fri",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "JON MCLAUGHLIN This Time of Year Tour with Cody Fry and My Silent Bravery",
+        "date": "Dec 23 Sat",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "LIZZ WINSTEAD in 2017: The Greatest Sh*t Show On Earth with Sam Breckenridge",
+        "date": "Dec 30 Sat",
+        "doors": "Doors: 1:00 pm"
+    },
+    {
+        "title": "LIZZ WINSTEAD in 2017: The Greatest Sh*t Show On Earth with Sam Breckenridge",
+        "date": "Dec 30 Sat",
+        "doors": "Doors: 6:30 pm"
+    },
+    {
+        "title": "LIZZ WINSTEAD in 2017: The Greatest Sh*t Show On Earth with Sam Breckenridge",
+        "date": "Dec 31 Sun",
+        "doors": "Doors: 6:30 pm"
+    },
+    {
+        "title": "THE BANJO HOUR with Captain Gravitone & the String Theory Orchestra ft. Pat Donohue",
+        "date": "Jan 5 Fri",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "DAN NEWTON'S CAFE ACCORDION ORCHESTRA with Ukulelezaza",
+        "date": "Jan 6 Sat",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "CHRISTINE LAVIN with special guest",
+        "date": "Jan 10 Wed",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "LA DAME BLANCHE with special guest",
+        "date": "Jan 11 Thu",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "STOLYETTE and HAR-DI-HAR StoLyette and Har-di-Har with Under Violet, aerialist Lynn Sabin Lunny and Tekk Nikk",
+        "date": "Jan 12 Fri",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "ALEX AIONO- FEELS LIKE TOUR 2018 with special guest Trinidad Cardona",
+        "date": "Jan 13 Sat",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "Fode & Sana Bangoura and The Cedar Present: GUINEA - THE MUSIC WE ARE",
+        "date": "Jan 19 Fri",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "MALAMANYA with Siama",
+        "date": "Jan 20 Sat",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "DANGEROUS MAN 5th Anniversary Bash",
+        "date": "Jan 21 Sun",
+        "doors": "Doors: 6:30 pm"
+    },
+    {
+        "title": "RORY SCOVEL in A Proper Gander Tour",
+        "date": "Jan 24 Wed",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "THE WAILERS with special guest",
+        "date": "Jan 25 Thu",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "DRONE NOT DRONES: The 5th Annual 28-Hour Drone",
+        "date": "Jan 26 Fri",
+        "doors": "Doors: 6:00 pm"
+    },
+    {
+        "title": "AN OPEN BOOK: AN EVENING WITH JUSTIN FURSTENFELD OF BLUE OCTOBER",
+        "date": "Feb 2 Fri",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "Super Bowl Safety Party for Youth",
+        "date": "Feb 4 Sun",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "KIMBRA with special guests King and Arc Iris",
+        "date": "Feb 5 Mon",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "Poppy.Computer Tour 2018",
+        "date": "Feb 8 Thu",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "An Evening with SONNY LANDRETH",
+        "date": "Feb 11 Sun",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "An Evening with JORMA KAUKONEN",
+        "date": "Feb 14 Wed",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "globalFEST On the Road featuring ORKESTA MENDOZA and LAS CAFETERAS",
+        "date": "Feb 17 Sat",
+        "doors": "Doors: 10:30 am"
+    },
+    {
+        "title": "JUSTIN ROBERTS & THE NOT READY FOR NAPTIME PLAYERS",
+        "date": "Feb 18 Sun",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "THE NIGHTINGALE TRIO with Mama Caught Fire",
+        "date": "Feb 18 Sun",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "CANCELLED: GARRISON KEILLOR with Robin & Linda Williams",
+        "date": "Feb 20 Tue",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "HANNEKE CASSEL BAND with Orange Mighty Trio with Dean Magraw",
+        "date": "Feb 21 Wed",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "ANI DIFRANCO",
+        "date": "Feb 23 Fri",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "CHOIR! CHOIR! CHOIR!",
+        "date": "Feb 25 Sun",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "WHY?",
+        "date": "Mar 2 Fri",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "An Evening with VÃ„SEN",
+        "date": "Mar 4 Sun",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "KYLE KINANE",
+        "date": "Mar 6 Tue",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "THE NOSLEEP PODCAST",
+        "date": "Mar 7 Wed",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "THE STEELDRIVERS with Kane and Gellert",
+        "date": "Mar 9 Fri",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "ANDREA GIBSON",
+        "date": "Mar 10 Sat",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "An Evening with LÃšNASA",
+        "date": "Mar 11 Sun",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "WE BANJO 3 with Talisk",
+        "date": "Mar 15 Thu",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "CRY CRY CRY",
+        "date": "Mar 16 Fri",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "LIVE! ON STAGE: JONATHAN RICHMAN featuring TOMMY LARKINS on the drums!",
+        "date": "Mar 16 Fri",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "BOILED IN LEAD and SisterTree",
+        "date": "Mar 17 Sat",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "EDENâ€”VERTIGO WORLD TOUR with special guests VÃ‰RITÃ‰",
+        "date": "Mar 22 Thu",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "An Evening with ALTAN",
+        "date": "Mar 25 Sun",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "NILS FRAHM - All Melody",
+        "date": "Mar 27 Tue",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "PAT DONOHUE & the Prairie All Stars",
+        "date": "Mar 30 Fri",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "S. CAREY with special guest Gordi",
+        "date": "Apr 7 Sat",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "MARTIN CARTHY with special guest",
+        "date": "Apr 10 Tue",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "WILD CHILD Expectations Tour",
+        "date": "Apr 13 Fri",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "KARI ARNETT with The Lowland Lakers and The Family Three",
+        "date": "Apr 14 Sat",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "THE RESIDENTS In Between Dreams",
+        "date": "Apr 16 Mon",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "TANYA TAGAQ",
+        "date": "Apr 20 Fri",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "FRIGG with special guest",
+        "date": "Apr 23 Mon",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "MARY BRIDGET DAVIES and MIA DYSON",
+        "date": "Apr 28 Sat",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "KID KOALA's Vinyl Vaudeville Floor Kids Edition",
+        "date": "Apr 30 Mon",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "KEVIN MORBY with Hand Habits",
+        "date": "May 2 Wed",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "RESCHEDULED: DAYME AROCENA with special guest",
+        "date": "May 3 Thu",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "BRIAN CULBERTSON - \"Colors of Love\" Tour",
+        "date": "May 10 Thu",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "An Evening with GREG BROWN",
+        "date": "May 18 Fri",
+        "doors": "Doors: 7:00 pm"
+    },
+    {
+        "title": "An Evening with GRIFFIN HOUSE",
+        "date": "May 19 Sat"
+    },
+    {
+        "title": "DANGEROUS MAN 5th Anniversary Bash",
+        "date": "January 21"
+    },
+    {
+        "title": "Super Bowl Safety Party for Youth",
+        "date": "February 4"
+    },
+    {
+        "title": "An Evening with GRIFFIN HOUSE",
+        "date": "May 19"
+    },
+    {
+        "title": "KARI ARNETT with The Lowland Lakers and The Family Three",
+        "date": "April 14"
+    },
+    {
+        "title": "LIVE! ON STAGE: JONATHAN RICHMAN featuring TOMMY LARKINS on the drums!",
+        "date": "March 16"
+    },
+    {
+        "title": "WILD CHILD Expectations Tour",
+        "date": "April 13"
+    },
+    {
+        "title": "KID KOALA's Vinyl Vaudeville Floor Kids Edition",
+        "date": "April 30"
+    },
+    {
+        "title": "Poppy.Computer Tour 2018",
+        "date": "February 8"
+    },
+    {
+        "title": "KEVIN MORBY with Hand Habits",
+        "date": "May 2"
+    },
+    {
+        "title": "BRIAN CULBERTSON - \"Colors of Love\" Tour",
+        "date": "May 10"
+    },
+    {
+        "title": "An Evening with GREG BROWN",
+        "date": "May 18"
+    },
+    {
+        "title": "An Evening with LÚNASA",
+        "date": "March 11"
+    },
+    {
+        "title": "An Evening with VÄSEN",
+        "date": "March 4"
+    },
+    {
+        "title": "MARTIN CARTHY with special guest",
+        "date": "April 10"
+    },
+    {
+        "title": "EDEN—VERTIGO WORLD TOUR with special guests VÉRITÉ",
+        "date": "March 22"
+    },
+    {
+        "title": "An Evening with SONNY LANDRETH",
+        "date": "February 11"
+    },
+    {
+        "title": "CHOIR! CHOIR! CHOIR!",
+        "date": "February 25"
+    },
+    {
+        "title": "DRONE NOT DRONES: The 5th Annual 28-Hour Drone",
+        "date": "January 26"
+    },
+    {
+        "title": "BOILED IN LEAD and SisterTree",
+        "date": "March 17"
+    },
+    {
+        "title": "PAT DONOHUE & the Prairie All Stars",
+        "date": "March 30"
+    },
+    {
+        "title": "globalFEST On the Road featuring ORKESTA MENDOZA and LAS CAFETERAS",
+        "date": "February 17"
+    },
+    {
+        "title": "THE RESIDENTS In Between Dreams",
+        "date": "April 16"
+    },
+    {
+        "title": "ANI DIFRANCO",
+        "date": "February 23"
+    },
+    {
+        "title": "ANDREA GIBSON",
+        "date": "March 10"
+    },
+    {
+        "title": "S. CAREY with special guest Gordi",
+        "date": "April 7"
+    },
+    {
+        "title": "RORY SCOVEL in A Proper Gander Tour",
+        "date": "January 24"
+    },
+    {
+        "title": "KIMBRA with special guests King and Arc Iris",
+        "date": "February 5"
+    },
+    {
+        "title": "STOLYETTE and HAR-DI-HAR StoLyette and Har-di-Har with Under Violet, aerialist Lynn Sabin Lunny and Tekk Nikk",
+        "date": "January 12"
+    },
+    {
+        "title": "An Evening with JORMA KAUKONEN",
+        "date": "February 14"
+    },
+    {
+        "title": "THE WAILERS with special guest",
+        "date": "January 25"
+    },
+    {
+        "title": "AN OPEN BOOK: AN EVENING WITH JUSTIN FURSTENFELD OF BLUE OCTOBER",
+        "date": "February 2"
+    },
+    {
+        "title": "WHY?",
+        "date": "March 2"
+    },
+    {
+        "title": "THE NIGHTINGALE TRIO with Mama Caught Fire",
+        "date": "February 18"
+    },
+    {
+        "title": "Fode & Sana Bangoura and The Cedar Present: GUINEA - THE MUSIC WE ARE",
+        "date": "January 19"
+    },
+    {
+        "title": "CRY CRY CRY",
+        "date": "March 16"
+    },
+    {
+        "title": "THE NOSLEEP PODCAST",
+        "date": "March 7"
+    },
+    {
+        "title": "LIZZ WINSTEAD in 2017: The Greatest Sh*t Show On Earth with Sam Breckenridge",
+        "date": "December 30"
+    },
+    {
+        "title": "LIZZ WINSTEAD in 2017: The Greatest Sh*t Show On Earth with Sam Breckenridge",
+        "date": "December 31"
+    },
+    {
+        "title": "LIZZ WINSTEAD in 2017: The Greatest Sh*t Show On Earth with Sam Breckenridge",
+        "date": "December 30"
+    },
+    {
+        "title": "DOSH & FRIENDS 10th Annual Cedar Show",
+        "date": "December 15"
+    },
+    {
+        "title": "MALAMANYA with Siama",
+        "date": "January 20"
+    },
+    {
+        "title": "MARY BRIDGET DAVIES and MIA DYSON",
+        "date": "April 28"
+    },
+    {
+        "title": "FRIGG with special guest",
+        "date": "April 23"
+    },
+    {
+        "title": "NILS FRAHM - All Melody",
+        "date": "March 27"
+    },
+    {
+        "title": "DAN NEWTON'S CAFE ACCORDION ORCHESTRA with Ukulelezaza",
+        "date": "January 6"
+    },
+    {
+        "title": "JUSTIN ROBERTS & THE NOT READY FOR NAPTIME PLAYERS",
+        "date": "February 18"
+    },
+    {
+        "title": "THE STEELDRIVERS with Kane and Gellert",
+        "date": "March 9"
+    },
+    {
+        "title": "HANNEKE CASSEL BAND with Orange Mighty Trio with Dean Magraw",
+        "date": "February 21"
+    },
+    {
+        "title": "CHRISTINE LAVIN with special guest",
+        "date": "January 10"
+    },
+    {
+        "title": "CANCELLED: GARRISON KEILLOR with Robin & Linda Williams",
+        "date": "February 20"
+    },
+    {
+        "title": "THE BANJO HOUR with Captain Gravitone & the String Theory Orchestra ft. Pat Donohue",
+        "date": "January 5"
+    },
+    {
+        "title": "ALEX AIONO- FEELS LIKE TOUR 2018 with special guest Trinidad Cardona",
+        "date": "January 13"
+    },
+    {
+        "title": "JON MCLAUGHLIN This Time of Year Tour with Cody Fry and My Silent Bravery",
+        "date": "December 23"
+    },
+    {
+        "title": "LA DAME BLANCHE with special guest",
+        "date": "January 11"
+    },
+    {
+        "title": "KYLE KINANE",
+        "date": "March 6"
+    },
+    {
+        "title": "WE BANJO 3 with Talisk",
+        "date": "March 15"
+    },
+    {
+        "title": "An Evening with ALTAN",
+        "date": "March 25"
+    },
+    {
+        "title": "RESCHEDULED: DAYME AROCENA with special guest",
+        "date": "May 3"
+    },
+    {
+        "title": "TANYA TAGAQ",
+        "date": "April 20"
+    }
+]
