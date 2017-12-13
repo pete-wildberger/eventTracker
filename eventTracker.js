@@ -12,6 +12,7 @@ const eventTracker = (req, res) => {
       let titles = [];
       let doorss = [];
       let dates = [];
+      let images = [];
       // Next, we'll utilize the cheerio library on the returned html which will essentially give us jQuery functionality
       var $ = cheerio.load(html);
 
@@ -24,12 +25,17 @@ const eventTracker = (req, res) => {
       $('.dates').each((i, elem) => {
         dates[i] = elem.children[0].data;
       });
+      $('img').each((i, elem) => {
+        console.log(elem);
+        images[i] = elem.attribs.src;
+      });
 
       for (var i = 0; i < titles.length; i++) {
         let json = {
           title: titles[i],
           date: dates[i],
-          doors: doorss[i]
+          doors: doorss[i],
+          image: images[i]
         };
         shows.push(json);
       }

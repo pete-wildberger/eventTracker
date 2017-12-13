@@ -8,7 +8,7 @@ client/node_modules
 /coverage
 
 # production
-/build
+client/build
 client/src/styles/main.min.css
 
 # misc
