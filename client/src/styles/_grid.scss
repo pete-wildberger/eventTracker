@@ -16,10 +16,13 @@ html {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  background: url('../assets/Background_Body.jpg');
+  background-size: cover;
 }
 [class*='col-'] {
   flex: 0 0 98%; /* phone */
   margin: 2% 2%;
+  background-color: transparent;
 }
 
 /* Mobile Landscape Screen Sizes */
@@ -52,6 +55,6 @@ html {
     flex: 0 0 68%;
   }
   .col-12 {
-    flex: 0 0 92%;
+    flex: 0 0 98%;
   }
 }
