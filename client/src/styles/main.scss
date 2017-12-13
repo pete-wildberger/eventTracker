@@ -1,6 +1,8 @@
 /*Import styles*/
 @import 'grid';
-
+html{
+  font-family: 'Permanent Marker', cursive;
+}
 .head {
   background: url('../assets/Background_Header.jpg') no-repeat;
   background-size: contain;
