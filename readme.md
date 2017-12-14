@@ -3,10 +3,12 @@
 Displays event data from different venues and displays it.
 
 Tech used:
+
 Frontend:
 * React
 * Axios
 * Sass
+
 Backend:
 * Node
 * Express
