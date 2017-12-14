@@ -90,3 +90,57 @@ exports.palmers = html => {
   }
   return shows;
 };
+
+exports.nomad = html => {
+  console.log('nomad');
+  var shows = [];
+  let titles = [];
+  let doorss = [];
+  let days = [];
+  let months = [];
+  let costs = [];
+  let images = [];
+  let links = [];
+  // Next, we'll utilize the cheerio library on the returned html which will essentially give us jQuery functionality
+  var $ = cheerio.load(html);
+
+  $('.event-item-title').each((i, elem) => {
+    titles[i] = elem.children[0].data;
+    console.log('title', elem.children[0].data);
+  });
+  $('.calendar-item-month').each((i, elem) => {
+    months[i] = elem.children[0].data;
+    console.log('month', elem.children[0].data);
+  });
+  $('.calendar-item-date').each((i, elem) => {
+    let classes = elem.attribs.class;
+    let day = classes.split(' ');
+    let sendMe = day[1].replace('day-', '');
+    days[i] = sendMe;
+  });
+  $('.event-item-description p:nth-child(3)').each((i, elem) => {
+    doorss[i] = elem.children[0].data;
+  });
+  $('.event-item-description p:nth-child(2)').each((i, elem) => {
+    costs[i] = elem.children[0].data;
+  });
+  $('.calendar-event-item > a').each((i, elem) => {
+    links[i] = elem.attribs.href;
+  });
+
+  for (var i = 0; i < titles.length; i++) {
+    let json = {
+      venue: 'Nomad',
+      title: titles[i],
+      date: moment(new Date(`${months[i]} ${days[i]}`)).format('MMM DD'),
+      doors: doorss[i],
+      cost: costs[i],
+      linkTo: links[i]
+    };
+    // check for small picture duplicates
+    console.log('nomad', shows);
+    shows.push(json);
+  }
+
+  return shows;
+};

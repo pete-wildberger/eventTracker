@@ -9,6 +9,7 @@ class Display extends Component {
     super(props);
     this.state = { shows: [] };
     this.getShows = this.getShows.bind(this);
+    this.testNo = this.testNo.bind(this);
   }
   displayShows() {
     let preform = this.state.shows;
@@ -64,9 +65,13 @@ class Display extends Component {
       this.setState({ shows: data.data });
     });
   }
+  testNo() {
+    axios.get('/test');
+  }
   componentDidMount() {
     console.log('cdm');
     this.getShows();
+    this.testNo();
   }
   render() {
     if (this.state.shows === []) {

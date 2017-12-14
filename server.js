@@ -18,6 +18,13 @@ app.get('/events', (req, res) => {
   });
 });
 
+app.get('/test', (req, res) => {
+  console.log('ping');
+  eventTracker.getHTML('http://www.nomadpub.com/calendar/', data => {
+    venues.nomad(data);
+  });
+});
+
 app.get('/', (req, res) => {
   console.log('base url hit');
   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
