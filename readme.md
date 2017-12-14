@@ -11,8 +11,10 @@ Frontend:
 
 Backend:
 * Node
+* Async
 * Express
 * Cheerio
-* Request
+* Moment
+* Request-promise
 
 The server pings the venue website, records necessary data, and sends it to the DOM.
