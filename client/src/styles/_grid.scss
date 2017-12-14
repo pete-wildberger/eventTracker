@@ -29,8 +29,8 @@ html {
   justify-content: center;
   background: url('../assets/Background_Body.jpg');
   background-position: center;
-  background-size: cover;
-  width: 100%;
+  // background-size: cover;
+  // width: 100%;
 }
 [class*='col-'] {
   flex: 0 0 98%; /* phone */

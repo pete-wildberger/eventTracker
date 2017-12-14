@@ -1,5 +1,5 @@
 const cheerio = require('cheerio');
-
+const moment = require('moment');
 // scrapes html data
 exports.cedar = html => {
   var shows = [];
@@ -32,14 +32,15 @@ exports.cedar = html => {
   });
 
   for (var i = 0; i < titles.length; i++) {
+    let time = dates[i].slice(0, -3);
     let json = {
       venue: 'Cedar Cultural Center',
       title: titles[i],
-      date: dates[i],
+      date: moment(new Date(time)).format('MMM DD'),
       doors: doorss[i],
       image: images[i],
       cost: costs[i],
-      linkTo: links[i]
+      linkTo: ` https://www.thecedar.org${links[i]}`
     };
     // check for small picture duplicates
     if (json.image.slice(-9, -4).includes('100')) {
@@ -78,7 +79,7 @@ exports.palmers = html => {
     let json = {
       venue: 'Palmers',
       title: titles[i],
-      date: arr[0],
+      date: moment(new Date(arr[0])).format('MMM DD'),
       doors: arr[1],
       cost: costs[i],
       linkTo: links[i]

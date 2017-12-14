@@ -11,35 +11,52 @@ class Display extends Component {
     this.getShows = this.getShows.bind(this);
   }
   displayShows() {
-    return this.state.shows.map(show => {
-      // if (show.image) {
-      return (
-        <div className="row" key={show.title}>
-          <div className="col-3">
-            <img src={show.image} alt={show.title} />
+    let preform = this.state.shows;
+    let thisYear = [];
+    // sort ascending by date
+    preform.sort((a, b) => {
+      return new Date(a.date) - new Date(b.date);
+    });
+    preform.forEach(show => {
+      if (show.date.includes('Dec')) {
+        thisYear.push(show);
+      }
+    });
+    let shows = thisYear.concat(preform);
+
+    return shows.map(show => {
+      if (show.image) {
+        return (
+          <div className="row" key={show.title}>
+            <div className="col-3">
+              <img src={show.image} alt={show.title} />
+            </div>
+            <div className="col-6">
+              <h1>{show.venue}</h1>
+              <h1>
+                <a href={show.linkTo}>{show.title}</a>
+              </h1>
+              <p>{show.date}</p>
+              <p>{show.doors}</p>
+              <p>{show.cost}</p>
+            </div>
           </div>
-          <div className="col-6">
-            <h1>{show.venue}</h1>
-            <h1>
-              <a href={show.linkTo}>{show.title}</a>
-            </h1>
-            <p>{show.date}</p>
-            <p>{show.doors}</p>
-            <p>{show.cost}</p>
+        );
+      } else {
+        return (
+          <div className="row" key={show.title}>
+            <div className="col-9">
+              <h1>{show.venue}</h1>
+              <h1>
+                <a href={show.linkTo}>{show.title}</a>
+              </h1>
+              <p>{show.date}</p>
+              <p>{show.doors}</p>
+              <p>{show.cost}</p>
+            </div>
           </div>
-        </div>
-      );
-      // } else {
-      //   <div className="col-9">
-      //     <h1>{show.venue}</h1>
-      //     <h1>
-      //       <a href={show.linkTo}>{show.title}</a>
-      //     </h1>
-      //     <p>{show.date}</p>
-      //     <p>{show.doors}</p>
-      //     <p>{show.cost}</p>
-      //   </div>;
-      // }
+        );
+      }
     });
   }
   getShows() {
