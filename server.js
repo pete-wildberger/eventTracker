@@ -2,16 +2,18 @@ const express = require('express'),
   app = express(),
   path = require('path'),
   bodyParser = require('body-parser'),
+  port = process.env.PORT || 8081,
   eventTracker = require('./eventTracker');
-// output = require('./output.json');
 
 app.use(express.static('client/build'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.get('/events', (req, res) => {
-  eventTracker();
-  res.send(output);
+  console.log('ping');
+  eventTracker.eventTracker(data => {
+    res.send(eventTracker.objectify(data));
+  });
 });
 
 app.get('/', (req, res) => {
@@ -19,6 +21,6 @@ app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 });
 
-app.listen('8081');
+app.listen(port);
 
 console.log('Magic happens on port 8081');

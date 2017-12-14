@@ -3,15 +3,15 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
-import output from '../output.json';
 
 class Display extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { shows: [] };
+    this.getShows = this.getShows.bind(this);
   }
   displayShows() {
-    return output.shows.map(show => {
+    return this.state.shows.map(show => {
       return (
         <div className="row" key={show.title}>
           <div className="col-3">
@@ -26,15 +26,31 @@ class Display extends Component {
       );
     });
   }
-  componentDidMount() {}
+  getShows() {
+    axios.get('/events').then(data => {
+      this.setState({ shows: data.data });
+    });
+  }
+  componentDidMount() {
+    console.log('cdm');
+    this.getShows();
+  }
   render() {
-    return (
-      <div className="app">
-        <Header />
-        <div className="body">{this.displayShows()}</div>
-        <Footer />
-      </div>
-    );
+    if (this.state.shows === []) {
+      return (
+        <div>
+          <p>loading</p>
+        </div>
+      );
+    } else {
+      return (
+        <div className="app">
+          <Header />
+          <div className="body">{this.displayShows()}</div>
+          <Footer />
+        </div>
+      );
+    }
   }
 }
 export default Display;
