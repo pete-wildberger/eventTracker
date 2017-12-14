@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 app.get('/events', (req, res) => {
   console.log('ping');
-  eventTracker.eventTracker(data => {
+  eventTracker.getHTML('https://www.thecedar.org/listing/', data => {
     res.send(eventTracker.objectify(data));
   });
 });

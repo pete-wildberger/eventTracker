@@ -3,9 +3,7 @@ const fs = require('fs'),
   cheerio = require('cheerio');
 
 // pings venue and returns data
-exports.eventTracker = callback => {
-  let url = 'https://www.thecedar.org/listing/';
-
+exports.getHTML = (url, callback) => {
   let data = request(url, (error, response, html) => {
     // First we'll check to make sure no errors occurred when making the request
     if (!error) {
