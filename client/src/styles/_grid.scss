@@ -10,23 +10,42 @@ html {
 *:after {
   box-sizing: inherit;
 }
-
+.head {
+  background: none;
+}
+.foot {
+  display: none;
+}
+.app {
+  background: url('../assets/Background_Body.jpg');
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+}
 /* grid system -- mobile first! */
 .row {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   background: url('../assets/Background_Body.jpg');
+  background-position: center;
   background-size: cover;
+  width: 100%;
 }
 [class*='col-'] {
   flex: 0 0 98%; /* phone */
-  margin: 2% 2%;
+  margin: 1% 1%;
   background-color: transparent;
 }
 
 /* Mobile Landscape Screen Sizes */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
+  .head {
+    background: none;
+  }
+  .foot {
+    display: none;
+  }
   .col-3,
   .col-3-6,
   .col-6 {
@@ -42,6 +61,13 @@ html {
 }
 /* Desktop screen Sizes */
 @media only screen and (min-width: 768px) {
+  .row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    background: url('../assets/Background_Body.jpg');
+    background-size: cover;
+  }
   .col-3,
   .col-3-6,
   .col-3-9 {
