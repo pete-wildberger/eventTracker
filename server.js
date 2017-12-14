@@ -3,6 +3,7 @@ const express = require('express'),
   path = require('path'),
   bodyParser = require('body-parser'),
   port = process.env.PORT || 8081,
+  venues = require('./venues'),
   eventTracker = require('./eventTracker');
 
 app.use(express.static('client/build'));
@@ -11,8 +12,9 @@ app.use(bodyParser.json());
 
 app.get('/events', (req, res) => {
   console.log('ping');
-  eventTracker.getHTML('https://www.thecedar.org/listing/', data => {
-    res.send(eventTracker.objectify(data));
+  eventTracker.makeJSON().then(data => {
+    let sendME = data[0].concat(data[1]);
+    res.send(sendME);
   });
 });
 
