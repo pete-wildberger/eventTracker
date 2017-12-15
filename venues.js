@@ -160,7 +160,7 @@ exports.acadia = html => {
     let obj = JSON.parse(objs[i]);
     let rightNow = moment(new Date()).format('MMM DD');
     let arr = obj.startTime.split('@');
-    if (new Date(arr[0]) <= new Date(rightNow)) {
+    if (new Date(arr[0]) < new Date(rightNow)) {
     } else {
       let json = {
         venue: 'Acadia',
