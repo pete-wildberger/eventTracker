@@ -13,15 +13,15 @@ app.use(bodyParser.json());
 app.get('/events', (req, res) => {
   console.log('ping');
   eventTracker.makeJSON().then(data => {
-    let sendME = data[0].concat(data[1], data[2]);
+    let sendME = data[0].concat(data[1], data[2], data[3]);
     res.send(sendME);
   });
 });
 
 // app.get('/test', (req, res) => {
-//   console.log('ping');
-//   eventTracker.getHTML('http://www.nomadpub.com/calendar/', data => {
-//     venues.nomad(data);
+//   console.log('test');
+//   eventTracker.getHTML('http://acadiapub.com/events/', data => {
+//     venues.acadia(data);
 //   });
 // });
 

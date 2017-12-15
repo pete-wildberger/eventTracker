@@ -34,9 +34,8 @@ class Display extends Component {
     //     // break;       //<-- Uncomment  if only the first term has to be removed
     //   }
     // }
-    console.log(preform);
     let sliced = preform.slice(0, -thisYear.length);
-    console.log('sliced', sliced);
+
     let shows = thisYear.concat(sliced);
 
     return shows.map(show => {
@@ -44,7 +43,7 @@ class Display extends Component {
         return (
           <div className="row" key={show.title}>
             <div className="col-3">
-              <img src={show.image} alt={show.title} />
+              <img src={show.image} alt={show.title} className="inherit" />
             </div>
             <div className="col-6">
               <h1>{show.venue}</h1>

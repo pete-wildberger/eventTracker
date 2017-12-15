@@ -92,7 +92,6 @@ exports.palmers = html => {
 };
 
 exports.nomad = html => {
-  console.log('nomad');
   var shows = [];
   let titles = [];
   let doorss = [];
@@ -143,5 +142,37 @@ exports.nomad = html => {
     shows.push(json);
   }
 
+  return shows;
+};
+
+exports.acadia = html => {
+  var shows = [];
+  let objs = [];
+
+  // Next, we'll utilize the cheerio library on the returned html which will essentially give us jQuery functionality
+  var $ = cheerio.load(html);
+
+  $('.tribe-events-category-entertainment').each((i, elem) => {
+    objs[i] = elem.attribs['data-tribejson'];
+  });
+
+  for (var i = 0; i < objs.length; i++) {
+    let obj = JSON.parse(objs[i]);
+    let rightNow = moment(new Date()).format('MMM DD');
+    let arr = obj.startTime.split('@');
+    if (new Date(arr[0]) <= new Date(rightNow)) {
+    } else {
+      let json = {
+        venue: 'Acadia',
+        title: obj.title,
+        date: moment(new Date(arr[0])).format('MMM DD'),
+        doors: arr[1],
+        image: obj.imageSrc,
+        linkTo: obj.permalink
+      };
+      shows.push(json);
+      // check for small picture duplicates
+    }
+  }
   return shows;
 };
