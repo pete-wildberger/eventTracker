@@ -13,17 +13,17 @@ app.use(bodyParser.json());
 app.get('/events', (req, res) => {
   console.log('ping');
   eventTracker.makeJSON().then(data => {
-    let sendME = data[0].concat(data[1]);
+    let sendME = data[0].concat(data[1], data[2]);
     res.send(sendME);
   });
 });
 
-app.get('/test', (req, res) => {
-  console.log('ping');
-  eventTracker.getHTML('http://www.nomadpub.com/calendar/', data => {
-    venues.nomad(data);
-  });
-});
+// app.get('/test', (req, res) => {
+//   console.log('ping');
+//   eventTracker.getHTML('http://www.nomadpub.com/calendar/', data => {
+//     venues.nomad(data);
+//   });
+// });
 
 app.get('/', (req, res) => {
   console.log('base url hit');
