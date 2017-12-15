@@ -43,15 +43,18 @@ h1 {
 /* Desktop screen Sizes */
 @media only screen and (min-width: 768px) {
   .head {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
     background: url('../assets/Background_Header.jpg') no-repeat;
-    background-size: contain;
+    background-size: cover;
     height: 320px;
     width: 100%;
   }
   .foot {
     background: url('../assets/Background_Footer.jpg')no-repeat;
-    background-size: contain;
-    height: 140px;
+    background-size: cover;
+    height: 108px;
     width: 100%;
   }
   .body {
