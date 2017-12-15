@@ -122,6 +122,9 @@ exports.nomad = html => {
   // $('.event-item-description p:nth-child(2)').each((i, elem) => {
   //   costs[i] = elem.children[0].data;
   // });
+  $('img.size-medium').each((i, elem) => {
+    images[i] = elem.attribs.src;
+  });
   $('.calendar-event-item > a').each((i, elem) => {
     links[i] = elem.attribs.href;
   });
@@ -132,6 +135,7 @@ exports.nomad = html => {
       title: titles[i],
       date: moment(new Date(`${months[i]} ${days[i]}`)).format('MMM DD'),
       doors: doorss[i],
+      image: images[i],
       // cost: costs[i],
       linkTo: links[i]
     };

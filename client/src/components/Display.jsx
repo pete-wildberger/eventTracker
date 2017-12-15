@@ -7,9 +7,12 @@ import Footer from './Footer';
 class Display extends Component {
   constructor(props) {
     super(props);
-    this.state = { shows: [] };
+    this.state = {
+      shows: [],
+      isFetching: true
+    };
     this.getShows = this.getShows.bind(this);
-    this.testNo = this.testNo.bind(this);
+    // this.testNo = this.testNo.bind(this);
   }
   displayShows() {
     let preform = this.state.shows;
@@ -23,7 +26,18 @@ class Display extends Component {
         thisYear.push(show);
       }
     });
-    let shows = thisYear.concat(preform);
+    // var search_term = 'Dec';
+    //
+    // for (var i = preform.length - 1; i >= 0; i--) {
+    //   if (preform[i].date.includes(search_term)) {
+    //     preform.splice(i, 1);
+    //     // break;       //<-- Uncomment  if only the first term has to be removed
+    //   }
+    // }
+    console.log(preform);
+    let sliced = preform.slice(0, -thisYear.length);
+    console.log('sliced', sliced);
+    let shows = thisYear.concat(sliced);
 
     return shows.map(show => {
       if (show.image) {
@@ -62,22 +76,22 @@ class Display extends Component {
   }
   getShows() {
     axios.get('/events').then(data => {
-      this.setState({ shows: data.data });
+      this.setState({ shows: data.data, isFetching: false });
     });
   }
-  testNo() {
-    axios.get('/test');
-  }
+  // testNo() {
+  //   axios.get('/test');
+  // }
   componentDidMount() {
     console.log('cdm');
     this.getShows();
-    this.testNo();
+    // this.testNo();
   }
   render() {
-    if (this.state.shows === []) {
+    if (this.state.isFetching == true) {
       return (
         <div>
-          <p>loading</p>
+          <img className="center-img" src="https://media.giphy.com/media/26BRA7WJEcn7yJy3C/giphy.gif" alt="Loading" />
         </div>
       );
     } else {

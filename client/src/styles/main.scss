@@ -10,14 +10,17 @@ html {
 .center {
   text-align: center;
 }
+.center-img {
+  display: block;
+  margin: 0 auto;
+}
 h1 {
   margin: 2% 2%;
 }
 
 /* Mobile Landscape Screen Sizes */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  .head,
-  .foot {
+  .head {
     display: none;
   }
 

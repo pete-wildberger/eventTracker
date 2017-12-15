@@ -13,9 +13,9 @@ html {
 .head {
   background: none;
 }
-.foot {
-  display: none;
-}
+// .foot {
+//   display: none;
+// }
 .app {
   background: url('../assets/Background_Body.jpg');
   background-position: center;
@@ -37,7 +37,9 @@ html {
   margin: 1% 1%;
   background-color: transparent;
 }
-
+.center-img {
+  width: 100%;
+}
 /* Mobile Landscape Screen Sizes */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
   .head {
