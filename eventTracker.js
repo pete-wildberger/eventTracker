@@ -2,6 +2,7 @@ const fs = require('fs'),
   venues = require('./venues'),
   async = require('async'),
   request = require('request'),
+  dbMethods = require('./db/methods.js'),
   rp = require('request-promise');
 
 // pings venue and returns data
@@ -32,5 +33,5 @@ exports.makeJSON = async () => {
     response = await rp('http://acadiapub.com/events/');
     list.push(venues.acadia(response));
   } catch (e) {}
-  return list;
+  dbMethods.addEvent(list);
 };
