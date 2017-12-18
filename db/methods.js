@@ -4,10 +4,14 @@ const pgp = require('pg-promise')({
 });
 const pool = require('./connection.js');
 
+// const db = pgp({
+//   host: 'localhost',
+//   port: 5432,
+//   database: 'eventTracker'
+// });
 const db = pgp({
-  host: 'localhost',
-  port: 5432,
-  database: 'eventTracker'
+  connectionString: process.env.DATABASE_URL,
+  ssl: true
 });
 
 exports.selectAll = () => {
