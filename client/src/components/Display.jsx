@@ -97,7 +97,14 @@ class Display extends Component {
       return (
         <div className="app">
           <Header />
-          <div className="body">{this.displayShows()}</div>
+          <div className="body">
+            <div className="phone-title row">
+              <div className="col-9">
+                <h1 className="center">West Bank Events</h1>
+              </div>
+            </div>
+            {this.displayShows()}
+          </div>
           <Footer />
         </div>
       );
