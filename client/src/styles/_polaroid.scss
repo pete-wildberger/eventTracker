@@ -36,45 +36,45 @@
   display: block;
   width: inherit;
 }
-body .row:nth-child(even) .polaroid-images a {
+.body .row:nth-child(even) .polaroid-images a {
   -webkit-transform: rotate(-3deg);
   -moz-transform: rotate(-3deg);
 }
-body .row:nth-child(3n) .polaroid-images a {
+.body .row:nth-child(3n) .polaroid-images a {
   -webkit-transform: none;
   -moz-transform: none;
   position: relative;
   top: -5px;
 }
-body .row:nth-child(4n) .polaroid-images a {
+.body .row:nth-child(4n) .polaroid-images a {
   -webkit-transform: rotate(8deg);
   -moz-transform: rotate(8deg);
   transform: rotate(8deg);
 }
-body .row:nth-child(5n) .polaroid-images a {
+.body .row:nth-child(5n) .polaroid-images a {
   -webkit-transform: rotate(-5deg);
   -moz-transform: rotate(-5deg);
   position: relative;
   right: 5px;
 }
 
-body .row:nth-child(7n) .polaroid-images a {
+.body .row:nth-child(7n) .polaroid-images a {
   position: relative;
   top: 8px;
   right: 5px;
 }
-body .row:nth-child(9n) .polaroid-images a {
+.body .row:nth-child(9n) .polaroid-images a {
   -webkit-transform: rotate(-15deg);
   -moz-transform: rotate(-15deg);
   position: relative;
   right: 5px;
 }
-body .row:nth-child(11n) .polaroid-images a {
+.body .row:nth-child(11n) .polaroid-images a {
   position: relative;
   top: 10px;
   left: -8px;
 }
-body .row .polaroid-images a:hover {
+.body .row .polaroid-images a:hover {
   -webkit-transform: scale(1.15);
   -moz-transform: scale(1.15);
   position: relative;

@@ -40,10 +40,13 @@ class Display extends Component {
 
     return shows.map(show => {
       if (show.image) {
+        let dateDoors = `${show.date} ${show.doors}`;
         return (
           <div className="row" key={show.title}>
-            <div className="col-3">
-              <img src={show.image} alt={show.title} className="inherit" />
+            <div className="col-3 polaroid-images">
+              <a href="" title={dateDoors}>
+                <img src={show.image} alt={show.title} className="inherit" />
+              </a>
             </div>
             <div className="col-6">
               <h1>{show.venue}</h1>

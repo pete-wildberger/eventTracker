@@ -1,11 +1,14 @@
 /*Import styles*/
 @import 'grid';
+@import 'polaroid';
+
 @font-face {
   font-family: 'Permanent Marker';
   src: local('Permanent Marker'), url(../assets/fonts/PermanentMarker-Regular.ttf) format('ttf');
 }
 html {
   font-family: 'Permanent Marker', cursive;
+  color: #333;
 }
 
 .center {
