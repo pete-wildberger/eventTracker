@@ -21,39 +21,54 @@ app.get('/events', (req, res) => {
   //   res.send(sendMe);
   // });
   dbMethods.selectAll().then(data => {
-    console.log('to send data', data);
     res.send(data);
   });
 });
+
+var dayInMilliseconds = 1000 * 60 * 60 * 24;
+setInterval(function() {
+  getEvents();
+}, dayInMilliseconds);
+
 function getDB(callback) {
+  console.log('getDB');
   dbMethods.selectAll().then(data => {
-    console.log('data', data);
     callback(data);
   });
 }
 function getEvents() {
-  var props = ['title', 'date', 'doors'];
+  console.log('getEvents');
+  var props = ['venue', 'title', 'date', 'doors', 'image', 'linkTo', 'cost'];
   getDB(db => {
     let events = db;
     eventTracker.makeList().then(data => {
       let scraped = data[0].concat(data[1], data[2], data[3]);
+      console.log('scraped');
       var result = events
         .filter(function(o1) {
+          console.log('filter');
           // filter out (!) items in result2
           return !scraped.some(function(o2) {
-            return o1.id === o2.id; // assumes unique id
+            return o1.venue === o2.venue; // assumes unique id
           });
         })
         .map(function(o) {
+          console.log('map', o);
           // use reduce to make objects with only the required properties
           // and map to apply this to the filtered array as a whole
           return props.reduce(function(newo, name) {
+            console.log('reduce');
             newo[name] = o[name];
             return newo;
           }, {});
         });
-      dbMethods.addEvents(result);
-      console.log(results);
+      if (result === []) {
+        console.log('empty');
+      } else {
+        dbMethods.addEvents(result).then(data => {
+          console.log('make an add', data);
+        });
+      }
     });
   });
 }

@@ -16,5 +16,7 @@ Backend:
 * Cheerio
 * Moment
 * Request-promise
+* Postgres
+* Postgres-promise
 
 The server pings the venue website, records necessary data, and sends it to the DOM.
