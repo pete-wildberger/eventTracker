@@ -82,7 +82,6 @@ class Display extends Component {
   //   axios.get('/test');
   // }
   componentDidMount() {
-    console.log('cdm');
     this.getShows();
     // this.testNo();
   }
