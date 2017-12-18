@@ -3,6 +3,7 @@ const express = require('express'),
   path = require('path'),
   bodyParser = require('body-parser'),
   port = process.env.PORT || 8081,
+  dbMethods = require('./db/methods.js'),
   venues = require('./venues'),
   eventTracker = require('./eventTracker');
 

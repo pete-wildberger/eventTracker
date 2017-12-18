@@ -39,8 +39,8 @@ exports.cedar = html => {
       date: moment(new Date(time)).format('MMM DD'),
       doors: doorss[i],
       image: images[i],
-      cost: costs[i],
-      linkTo: ` https://www.thecedar.org${links[i]}`
+      linkTo: ` https://www.thecedar.org${links[i]}`,
+      cost: costs[i]
     };
     // check for small picture duplicates
     if (json.image.slice(-9, -4).includes('100')) {
@@ -81,8 +81,8 @@ exports.palmers = html => {
       title: titles[i],
       date: moment(new Date(arr[0])).format('MMM DD'),
       doors: arr[1],
-      cost: costs[i],
-      linkTo: links[i]
+      linkTo: links[i],
+      cost: costs[i]
     };
     // check for small picture duplicates
 
@@ -135,8 +135,8 @@ exports.nomad = html => {
       date: moment(new Date(`${months[i]} ${days[i]}`)).format('MMM DD'),
       doors: doorss[i],
       image: images[i],
-      // cost: costs[i],
       linkTo: links[i]
+      // cost: costs[i],
     };
     // check for small picture duplicates
     shows.push(json);
