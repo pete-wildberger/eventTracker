@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express'),
   app = express(),
   path = require('path'),
@@ -13,7 +14,6 @@ app.use(bodyParser.json());
 
 app.get('/events', (req, res) => {
   console.log('ping');
-  getEvents();
   // eventTracker.makeList().then(data => {
   //   let sendMe = data[0].concat(data[1], data[2], data[3]);
   //   console.log('sendMe'.sendMe);

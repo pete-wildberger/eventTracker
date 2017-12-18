@@ -8,11 +8,12 @@ client/node_modules
 /coverage
 
 # production
-client/build
-client/src/styles/main.min.css
-#src
+#client/build
+#client/src/styles/main.min.css
+src
 # misc
 .DS_Store
+.env
 .env.local
 .env.development.local
 .env.test.local
