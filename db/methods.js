@@ -4,9 +4,13 @@ const pgp = require('pg-promise')({
 });
 const pool = require('./connection.js');
 
-const db = pgp(/*connection*/);
+const db = pgp({
+  host: 'localhost',
+  port: 5432,
+  database: 'eventTracker'
+});
 
-module.selectAll = () => {
+exports.selectAll = () => {
   return new Promise((resolve, reject) => {
     pool.connect((err, client, done) => {
       if (err) {
@@ -19,14 +23,15 @@ module.selectAll = () => {
         if (err) {
           reject(err);
         }
-
+        console.log('result', result);
         resolve(result.rows[0]);
       });
     });
   });
 };
 
-module.addEvent = values => {
+exports.addEvents = values => {
+  console.log('addEvents', values);
   // our set of columns, to be created only once, and then shared/reused,
   // to let it cache up its formatting templates for high performance:
   let cs = new pgp.helpers.ColumnSet(['venue', 'title', 'date', 'doors', 'image', 'linkTo', 'cost'], {
@@ -35,14 +40,16 @@ module.addEvent = values => {
   // generating a multi-row insert query:
   let query = pgp.helpers.insert(values, cs);
   //=> INSERT INTO "tmp"("col_a","col_b") VALUES('a1','b1'),('a2','b2')
-
+  console.log('query', query);
   // executing the query:
   db
     .none(query)
     .then(data => {
       // success;
+      console.log('addEvents', data);
     })
     .catch(error => {
+      console.log('error', error);
       // error;
     });
 };

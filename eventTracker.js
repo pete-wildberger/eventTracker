@@ -17,7 +17,7 @@ exports.getHTML = (url, callback) => {
   });
 };
 
-exports.makeJSON = async () => {
+exports.makeList = async () => {
   let list = [];
   let response;
   try {
@@ -33,5 +33,7 @@ exports.makeJSON = async () => {
     response = await rp('http://acadiapub.com/events/');
     list.push(venues.acadia(response));
   } catch (e) {}
-  dbMethods.addEvent(list);
+
+  dbMethods.addEvents(list);
+  return list;
 };

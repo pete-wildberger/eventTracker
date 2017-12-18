@@ -81,6 +81,7 @@ exports.palmers = html => {
       title: titles[i],
       date: moment(new Date(arr[0])).format('MMM DD'),
       doors: arr[1],
+      image: null,
       linkTo: links[i],
       cost: costs[i]
     };
@@ -135,8 +136,8 @@ exports.nomad = html => {
       date: moment(new Date(`${months[i]} ${days[i]}`)).format('MMM DD'),
       doors: doorss[i],
       image: images[i],
-      linkTo: links[i]
-      // cost: costs[i],
+      linkTo: links[i],
+      cost: null
     };
     // check for small picture duplicates
     shows.push(json);
@@ -168,7 +169,8 @@ exports.acadia = html => {
         date: moment(new Date(arr[0])).format('MMM DD'),
         doors: arr[1],
         image: obj.imageSrc,
-        linkTo: obj.permalink
+        linkTo: obj.permalink,
+        cost: null
       };
       shows.push(json);
       // check for small picture duplicates
