@@ -7,9 +7,7 @@
 html {
   font-family: 'Permanent Marker', cursive;
 }
-.phone-title {
-  display: block;
-}
+
 .center {
   text-align: center;
 }
@@ -29,9 +27,6 @@ h1 {
 
 /* Mobile Landscape Screen Sizes */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  .phone-title {
-    display: block;
-  }
   .head {
     display: none;
   }
@@ -51,9 +46,6 @@ h1 {
 }
 /* Desktop screen Sizes */
 @media only screen and (min-width: 768px) {
-  .phone-title {
-    display: none;
-  }
   .head {
     display: flex;
     flex-flow: row wrap;
