@@ -34,6 +34,5 @@ exports.makeList = async () => {
     list.push(venues.acadia(response));
   } catch (e) {}
 
-  dbMethods.addEvents(list);
   return list;
 };

@@ -13,10 +13,16 @@ app.use(bodyParser.json());
 
 app.get('/events', (req, res) => {
   console.log('ping');
-  // getEvents();
-  eventTracker.makeList().then(data => {
-    let sendME = data[0].concat(data[1], data[2], data[3]);
-    res.send(sendME);
+  getEvents();
+  // eventTracker.makeList().then(data => {
+  //   let sendMe = data[0].concat(data[1], data[2], data[3]);
+  //   console.log('sendMe'.sendMe);
+  //   dbMethods.addEvents(sendMe);
+  //   res.send(sendMe);
+  // });
+  dbMethods.selectAll().then(data => {
+    console.log('to send data', data);
+    res.send(data);
   });
 });
 function getDB(callback) {
