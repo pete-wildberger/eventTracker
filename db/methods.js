@@ -4,15 +4,15 @@ const pgp = require('pg-promise')({
 });
 const pool = require('./connection.js');
 
-// const db = pgp({
-//   host: 'localhost',
-//   port: 5432,
-//   database: 'eventTracker'
-// });
 const db = pgp({
-  connectionString: process.env.DATABASE_URL,
-  ssl: true
+  host: 'localhost',
+  port: 5432,
+  database: 'eventTracker'
 });
+// const db = pgp({
+//   connectionString: process.env.DATABASE_URL,
+//   ssl: true
+// });
 
 exports.selectAll = () => {
   return new Promise((resolve, reject) => {
@@ -56,6 +56,7 @@ exports.addEvents = values => {
     });
 };
 exports.deleteEvents = () => {
+  console.log('deleteEvents');
   return new Promise((resolve, reject) => {
     pool.connect((err, client, done) => {
       if (err) {
@@ -63,12 +64,13 @@ exports.deleteEvents = () => {
         return reject(err);
       }
 
-      client.query('DELETE FROM events WHERE date < GETDATE()', (err, result) => {
+      client.query('DELETE FROM events WHERE date < now()', (err, result) => {
         done();
         if (err) {
           reject(err);
         }
-        resolve(result.rows);
+        console.log('result', result);
+        resolve(result);
       });
     });
   });

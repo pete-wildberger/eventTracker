@@ -36,6 +36,10 @@ setInterval(function() {
   });
 }, dayInMilliseconds);
 
+// dbMethods.deleteEvents().then(data => {
+//   console.log('deleted');
+// });
+
 function getDB(callback) {
   console.log('getDB');
   dbMethods.selectAll().then(data => {
@@ -44,39 +48,39 @@ function getDB(callback) {
 }
 function getEvents() {
   console.log('getEvents');
-  var props = ['venue', 'title', 'date', 'doors', 'image', 'linkTo', 'cost'];
-  getDB(db => {
-    let events = db;
-    eventTracker.makeList().then(data => {
-      let scraped = data[0].concat(data[1], data[2], data[3]);
-      console.log('scraped');
-      var result = events
-        .filter(function(o1) {
-          console.log('filter');
-          // filter out (!) items in result2
-          return !scraped.some(function(o2) {
-            return o1.venue === o2.venue; // assumes unique id
-          });
-        })
-        .map(function(o) {
-          console.log('map', o);
-          // use reduce to make objects with only the required properties
-          // and map to apply this to the filtered array as a whole
-          return props.reduce(function(newo, name) {
-            console.log('reduce');
-            newo[name] = o[name];
-            return newo;
-          }, {});
-        });
-      if (result === []) {
-        console.log('empty');
-      } else {
-        dbMethods.addEvents(result).then(data => {
-          console.log('make an add', data);
-        });
-      }
+  // var props = ['venue', 'title', 'date', 'doors', 'image', 'linkTo', 'cost'];
+  // getDB(db => {
+  //   let events = db;
+  eventTracker.makeList().then(data => {
+    let scraped = data[0].concat(data[1], data[2], data[3]);
+    console.log('scraped');
+    // var result = events
+    //   .filter(function(o1) {
+    //     console.log('filter');
+    //     // filter out (!) items in result2
+    //     return !scraped.some(function(o2) {
+    //       return o1.venue === o2.venue; // assumes unique id
+    //     });
+    //   })
+    //   .map(function(o) {
+    //     console.log('map', o);
+    //     // use reduce to make objects with only the required properties
+    //     // and map to apply this to the filtered array as a whole
+    //     return props.reduce(function(newo, name) {
+    //       console.log('reduce');
+    //       newo[name] = o[name];
+    //       return newo;
+    //     }, {});
+    //   });
+    // if (result === []) {
+    //   console.log('empty');
+    // } else {
+    dbMethods.addEvents(scraped).then(data => {
+      console.log('make an add', data);
     });
+    // }
   });
+  // });
 }
 // app.get('/test', (req, res) => {
 //   console.log('test');
