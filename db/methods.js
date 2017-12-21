@@ -55,3 +55,21 @@ exports.addEvents = values => {
       // error;
     });
 };
+exports.deleteEvents = () => {
+  return new Promise((resolve, reject) => {
+    pool.connect((err, client, done) => {
+      if (err) {
+        done();
+        return reject(err);
+      }
+
+      client.query('DELETE FROM events WHERE date < GETDATE()', (err, result) => {
+        done();
+        if (err) {
+          reject(err);
+        }
+        resolve(result.rows);
+      });
+    });
+  });
+};

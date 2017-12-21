@@ -33,10 +33,15 @@ exports.cedar = html => {
 
   for (var i = 0; i < titles.length; i++) {
     let time = dates[i].slice(0, -3);
+    if (time[0] != 'D') {
+      time += ' 2017';
+    } else {
+      time += ' 2016';
+    }
     let json = {
       venue: 'Cedar Cultural Center',
       title: titles[i],
-      date: moment(new Date(time)).format('MMM DD'),
+      date: moment(new Date(time)).format('MMM DD YYYY'),
       doors: doorss[i],
       image: images[i],
       linkTo: ` https://www.thecedar.org${links[i]}`,
@@ -76,10 +81,16 @@ exports.palmers = html => {
 
   for (var i = 0; i < titles.length; i++) {
     let arr = dates[i].split('@');
+    let time = arr[0];
+    if (time[0] != 'D') {
+      time += ' 2017';
+    } else {
+      time += ' 2016';
+    }
     let json = {
       venue: 'Palmers',
       title: titles[i],
-      date: moment(new Date(arr[0])).format('MMM DD'),
+      date: moment(new Date(time)).format('MMM DD YYYY'),
       doors: arr[1],
       image: null,
       linkTo: links[i],
@@ -130,10 +141,16 @@ exports.nomad = html => {
   });
 
   for (var i = 0; i < titles.length; i++) {
+    let time = months[i];
+    if (time[0] != 'D') {
+      time += ' 2017';
+    } else {
+      time += ' 2016';
+    }
     let json = {
       venue: 'Nomad',
       title: titles[i],
-      date: moment(new Date(`${months[i]} ${days[i]}`)).format('MMM DD'),
+      date: moment(new Date(`${months[i]} ${days[i]}`)).format('MMM DD YYYY'),
       doors: doorss[i],
       image: images[i],
       linkTo: links[i],
@@ -161,12 +178,18 @@ exports.acadia = html => {
     let obj = JSON.parse(objs[i]);
     let rightNow = moment(new Date()).format('MMM DD');
     let arr = obj.startTime.split('@');
-    if (new Date(arr[0]) < new Date(rightNow)) {
+    let time = arr[0];
+    if (new Date(time) < new Date(rightNow)) {
     } else {
+      if (time[0] != 'D') {
+        time += ' 2017';
+      } else {
+        time += ' 2016';
+      }
       let json = {
         venue: 'Acadia',
         title: obj.title,
-        date: moment(new Date(arr[0])).format('MMM DD'),
+        date: moment(new Date(time)).format('MMM DD YYYY'),
         doors: arr[1],
         image: obj.imageSrc,
         linkTo: obj.permalink,

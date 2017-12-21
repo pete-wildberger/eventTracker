@@ -30,6 +30,12 @@ setInterval(function() {
   getEvents();
 }, dayInMilliseconds);
 
+setInterval(function() {
+  dbMethods.deleteEvents().then(data => {
+    console.log('deleted');
+  });
+}, dayInMilliseconds);
+
 function getDB(callback) {
   console.log('getDB');
   dbMethods.selectAll().then(data => {
