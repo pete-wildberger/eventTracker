@@ -2,6 +2,7 @@ const cheerio = require('cheerio');
 const moment = require('moment');
 // scrapes html data
 exports.cedar = html => {
+  console.log('cedar');
   var shows = [];
   let titles = [];
   let doorss = [];
@@ -34,9 +35,9 @@ exports.cedar = html => {
   for (var i = 0; i < titles.length; i++) {
     let time = dates[i].slice(0, -3);
     if (time[0] != 'D') {
-      time += ' 2017';
+      time += ' 2018';
     } else {
-      time += ' 2016';
+      time += ' 2017';
     }
     let json = {
       venue: 'Cedar Cultural Center',
@@ -57,6 +58,7 @@ exports.cedar = html => {
 };
 
 exports.palmers = html => {
+  console.log('palmers');
   var shows = [];
   let titles = [];
   let doorss = [];
@@ -83,9 +85,9 @@ exports.palmers = html => {
     let arr = dates[i].split('@');
     let time = arr[0];
     if (time[0] != 'D') {
-      time += ' 2017';
+      time += ' 2018';
     } else {
-      time += ' 2016';
+      time += ' 2017';
     }
     let json = {
       venue: 'Palmers',
@@ -96,6 +98,7 @@ exports.palmers = html => {
       linkTo: links[i],
       cost: costs[i]
     };
+
     // check for small picture duplicates
 
     shows.push(json);
@@ -104,6 +107,7 @@ exports.palmers = html => {
 };
 
 exports.nomad = html => {
+  console.log('nomad');
   var shows = [];
   let titles = [];
   let doorss = [];
@@ -141,21 +145,24 @@ exports.nomad = html => {
   });
 
   for (var i = 0; i < titles.length; i++) {
-    let time = months[i];
-    if (time[0] != 'D') {
-      time += ' 2017';
+    let time = days[i];
+
+    let mCheck = months[i];
+    if (mCheck[0] != 'D') {
+      time += ' 2018';
     } else {
-      time += ' 2016';
+      time += ' 2017';
     }
     let json = {
       venue: 'Nomad',
       title: titles[i],
-      date: moment(new Date(`${months[i]} ${days[i]}`)).format('MMM DD YYYY'),
+      date: moment(new Date(`${months[i]} ${time}`)).format('MMM DD YYYY'),
       doors: doorss[i],
       image: images[i],
       linkTo: links[i],
       cost: null
     };
+
     // check for small picture duplicates
     shows.push(json);
   }
@@ -164,6 +171,7 @@ exports.nomad = html => {
 };
 
 exports.acadia = html => {
+  console.log('acadia');
   var shows = [];
   let objs = [];
 
@@ -182,9 +190,9 @@ exports.acadia = html => {
     if (new Date(time) < new Date(rightNow)) {
     } else {
       if (time[0] != 'D') {
-        time += ' 2017';
+        time += ' 2018';
       } else {
-        time += ' 2016';
+        time += ' 2017';
       }
       let json = {
         venue: 'Acadia',

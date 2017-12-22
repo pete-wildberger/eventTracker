@@ -25,28 +25,28 @@ app.get('/events', (req, res) => {
     res.send(data);
   });
 });
+getEvents();
+// var dayInMilliseconds = 1000 * 60 * 60 * 24;
+// setInterval(function() {
+//   getEvents();
+// }, dayInMilliseconds);
 
-var dayInMilliseconds = 1000 * 60 * 60 * 24;
-setInterval(function() {
-  getEvents();
-}, dayInMilliseconds);
-
-setInterval(function() {
-  dbMethods.deleteEvents().then(data => {
-    console.log('deleted');
-  });
-}, dayInMilliseconds);
+// setInterval(function() {
+//   dbMethods.deleteEvents().then(data => {
+//     console.log('deleted');
+//   });
+// }, dayInMilliseconds);
 
 // dbMethods.deleteEvents().then(data => {
 //   console.log('deleted');
 // });
 
-function getDB(callback) {
-  console.log('getDB');
-  dbMethods.selectAll().then(data => {
-    callback(data);
-  });
-}
+// function getDB(callback) {
+//   console.log('getDB');
+//   dbMethods.selectAll().then(data => {
+//     callback(data);
+//   });
+// }
 function getEvents() {
   console.log('getEvents');
   // var props = ['venue', 'title', 'date', 'doors', 'image', 'linkTo', 'cost'];
@@ -55,6 +55,9 @@ function getEvents() {
   eventTracker.makeList().then(data => {
     let scraped = data[0].concat(data[1], data[2], data[3]);
     console.log('scraped');
+    dbMethods.addEvents(scraped);
+    dbMethods.removeDups();
+
     // var result = events
     //   .filter(function(o1) {
     //     console.log('filter');
@@ -76,9 +79,7 @@ function getEvents() {
     // if (result === []) {
     //   console.log('empty');
     // } else {
-    dbMethods.addEvents(scraped).then(data => {
-      console.log('make an add', data);
-    });
+
     // }
   });
   // });

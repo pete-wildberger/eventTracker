@@ -4,15 +4,15 @@ const pgp = require('pg-promise')({
 });
 const pool = require('./connection.js');
 
-// const db = pgp({
-//   host: 'localhost',
-//   port: 5432,
-//   database: 'eventTracker'
-// });
 const db = pgp({
-  connectionString: process.env.DATABASE_URL,
-  ssl: true
+  host: 'localhost',
+  port: 5432,
+  database: 'eventTracker'
 });
+// const db = pgp({
+//   connectionString: process.env.DATABASE_URL,
+//   ssl: true
+// });
 
 exports.selectAll = () => {
   return new Promise((resolve, reject) => {
@@ -34,6 +34,7 @@ exports.selectAll = () => {
 };
 
 exports.addEvents = values => {
+  console.log('addEvents');
   // our set of columns, to be created only once, and then shared/reused,
   // to let it cache up its formatting templates for high performance:
   let cs = new pgp.helpers.ColumnSet(['venue', 'title', 'date', 'doors', 'image', 'linkTo', 'cost'], {
@@ -64,7 +65,7 @@ exports.deleteEvents = () => {
         return reject(err);
       }
 
-      client.query('DELETE FROM events WHERE date < now()', (err, result) => {
+      client.query('DELETE FROM events WHERE date < CURRENT_DATE', (err, result) => {
         done();
         if (err) {
           reject(err);
@@ -72,6 +73,30 @@ exports.deleteEvents = () => {
         console.log('result', result);
         resolve(result);
       });
+    });
+  });
+};
+
+exports.removeDups = () => {
+  console.log('removeDups');
+  return new Promise((resolve, reject) => {
+    pool.connect((err, client, done) => {
+      if (err) {
+        done();
+        return reject(err);
+      }
+
+      client.query(
+        'DELETE FROM events WHERE id IN (SELECT id FROM (SELECT id, ROW_NUMBER() OVER (partition BY venue, title, date, doors, cost ORDER BY id) AS rnum FROM events) t WHERE t.rnum > 1);',
+        (err, result) => {
+          done();
+          if (err) {
+            reject(err);
+          }
+          console.log('result', result);
+          resolve(result);
+        }
+      );
     });
   });
 };
