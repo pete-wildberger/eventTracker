@@ -21,6 +21,7 @@ app.get('/events', (req, res) => {
   //   res.send(sendMe);
   // });
   dbMethods.selectAll().then(data => {
+    console.log(data);
     res.send(data);
   });
 });

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import moment from 'moment';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
@@ -15,16 +16,12 @@ class Display extends Component {
     // this.testNo = this.testNo.bind(this);
   }
   displayShows() {
+    console.log('displayShows');
     let preform = this.state.shows;
     let thisYear = [];
     // sort ascending by date
     preform.sort((a, b) => {
-      return new Date(a.date) - new Date(b.date);
-    });
-    preform.forEach(show => {
-      if (show.date.includes('Dec')) {
-        thisYear.push(show);
-      }
+      return a.date - b.date;
     });
     // var search_term = 'Dec';
     //
@@ -34,11 +31,9 @@ class Display extends Component {
     //     // break;       //<-- Uncomment  if only the first term has to be removed
     //   }
     // }
-    let sliced = preform.slice(0, -thisYear.length);
 
-    let shows = thisYear.concat(sliced);
-
-    return shows.map(show => {
+    return preform.map(show => {
+      console.log('show html');
       if (show.image) {
         let dateDoors = `${show.date} ${show.doors}`;
         return (
@@ -53,7 +48,7 @@ class Display extends Component {
               <h1>
                 <a href={show.linkTo}>{show.title}</a>
               </h1>
-              <p>{show.date}</p>
+              <p>{moment(show.date).format('MMM DD')}</p>
               <p>{show.doors}</p>
               <p>{show.cost}</p>
             </div>
@@ -67,7 +62,7 @@ class Display extends Component {
               <h1>
                 <a href={show.linkTo}>{show.title}</a>
               </h1>
-              <p>{show.date}</p>
+              <p>{moment(show.date).format('MMM DD')}</p>
               <p>{show.doors}</p>
               <p>{show.cost}</p>
             </div>
@@ -78,6 +73,7 @@ class Display extends Component {
   }
   getShows() {
     axios.get('/events').then(data => {
+      console.log('data', data.data);
       this.setState({ shows: data.data, isFetching: false });
     });
   }
