@@ -16,7 +16,6 @@ class Display extends Component {
     // this.testNo = this.testNo.bind(this);
   }
   displayShows() {
-    console.log('displayShows');
     let preform = this.state.shows;
     let thisYear = [];
     // sort ascending by date
@@ -33,7 +32,6 @@ class Display extends Component {
     // }
 
     return preform.map(show => {
-      console.log('show html');
       if (show.image) {
         let dateDoors = `${show.date} ${show.doors}`;
         return (
@@ -73,7 +71,6 @@ class Display extends Component {
   }
   getShows() {
     axios.get('/events').then(data => {
-      console.log('data', data.data);
       this.setState({ shows: data.data, isFetching: false });
     });
   }
