@@ -33,7 +33,7 @@ class Display extends Component {
 
     return preform.map(show => {
       if (show.image) {
-        let dateDoors = `${show.date} ${show.doors}`;
+        let dateDoors = `${moment(show.date).format('MMM DD')} ${show.doors}`;
         return (
           <div className="row" key={show.title}>
             <div className="col-3 polaroid-images">
