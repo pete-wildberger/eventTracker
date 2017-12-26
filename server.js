@@ -19,7 +19,10 @@ app.get('/events', (req, res) => {
     res.send(data);
   });
 });
-getEvents();
+
+setInterval(() => {
+  getEvents();
+}, 86400000); // every 5 minutes (300000)
 
 function getEvents() {
   console.log('getEvents');
