@@ -50,6 +50,8 @@ exports.addEvents = values => {
     .none(query)
     .then(data => {
       // success;
+      this.removeDups();
+      this.deleteEvents();
     })
     .catch(error => {
       console.log('error', error);

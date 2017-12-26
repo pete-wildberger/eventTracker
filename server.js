@@ -14,75 +14,20 @@ app.use(bodyParser.json());
 
 app.get('/events', (req, res) => {
   console.log('ping');
-  // eventTracker.makeList().then(data => {
-  //   let sendMe = data[0].concat(data[1], data[2], data[3]);
-  //   console.log('sendMe'.sendMe);
-  //   dbMethods.addEvents(sendMe);
-  //   res.send(sendMe);
-  // });
   dbMethods.selectAll().then(data => {
     console.log(data);
     res.send(data);
   });
 });
 getEvents();
-// var dayInMilliseconds = 1000 * 60 * 60 * 24;
-// setInterval(function() {
-//   getEvents();
-// }, dayInMilliseconds);
 
-// setInterval(function() {
-//   dbMethods.deleteEvents().then(data => {
-//     console.log('deleted');
-//   });
-// }, dayInMilliseconds);
-
-// dbMethods.deleteEvents().then(data => {
-//   console.log('deleted');
-// });
-
-// function getDB(callback) {
-//   console.log('getDB');
-//   dbMethods.selectAll().then(data => {
-//     callback(data);
-//   });
-// }
 function getEvents() {
   console.log('getEvents');
-  // var props = ['venue', 'title', 'date', 'doors', 'image', 'linkTo', 'cost'];
-  // getDB(db => {
-  //   let events = db;
   eventTracker.makeList().then(data => {
     let scraped = data[0].concat(data[1], data[2], data[3]);
     console.log('scraped');
     dbMethods.addEvents(scraped);
-    dbMethods.removeDups();
-
-    // var result = events
-    //   .filter(function(o1) {
-    //     console.log('filter');
-    //     // filter out (!) items in result2
-    //     return !scraped.some(function(o2) {
-    //       return o1.venue === o2.venue; // assumes unique id
-    //     });
-    //   })
-    //   .map(function(o) {
-    //     console.log('map', o);
-    //     // use reduce to make objects with only the required properties
-    //     // and map to apply this to the filtered array as a whole
-    //     return props.reduce(function(newo, name) {
-    //       console.log('reduce');
-    //       newo[name] = o[name];
-    //       return newo;
-    //     }, {});
-    //   });
-    // if (result === []) {
-    //   console.log('empty');
-    // } else {
-
-    // }
   });
-  // });
 }
 // app.get('/test', (req, res) => {
 //   console.log('test');
