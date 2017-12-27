@@ -21,6 +21,7 @@ app.get('/events', (req, res) => {
 });
 
 setInterval(() => {
+  dbMethods.deleteEvents();
   getEvents();
 }, 86400000); // every 5 minutes (300000)
 
