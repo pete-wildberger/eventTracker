@@ -22,7 +22,7 @@ exports.selectAll = () => {
         return reject(err);
       }
 
-      client.query('SELECT * FROM events', (err, result) => {
+      client.query('SELECT * FROM events ORDER BY date', (err, result) => {
         done();
         if (err) {
           reject(err);

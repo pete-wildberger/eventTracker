@@ -17,19 +17,6 @@ class Display extends Component {
   }
   displayShows() {
     let preform = this.state.shows;
-    let thisYear = [];
-    // sort ascending by date
-    preform.sort((a, b) => {
-      return a.date - b.date;
-    });
-    // var search_term = 'Dec';
-    //
-    // for (var i = preform.length - 1; i >= 0; i--) {
-    //   if (preform[i].date.includes(search_term)) {
-    //     preform.splice(i, 1);
-    //     // break;       //<-- Uncomment  if only the first term has to be removed
-    //   }
-    // }
 
     return preform.map(show => {
       if (show.image) {
