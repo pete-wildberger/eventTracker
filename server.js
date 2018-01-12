@@ -14,6 +14,7 @@ app.use(bodyParser.json());
 
 app.get('/events', (req, res) => {
   console.log('ping');
+  dbMethods.deleteEvents();
   dbMethods.selectAll().then(data => {
     console.log(data);
     res.send(data);
